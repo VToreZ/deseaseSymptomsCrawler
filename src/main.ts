@@ -1,4 +1,3 @@
-import { createCrawlerInstance, ONSuccess } from "@/customCrawler.js"
 import { parseOmim } from "@/omimParser/omimParser.js"
 import * as fs from "fs"
 
