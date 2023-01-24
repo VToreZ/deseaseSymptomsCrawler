@@ -21,9 +21,9 @@ export class List_of_OMIM_disorder_codes {
             if(result.length < 3) return null;
 
             return {
-                caption: result[0],
-                code: result[1],
-                gene: result[2]
+                caption: result[0].trim(),
+                code: result[1].trim(),
+                gene: result[2].trim()
             }
         }).filter(Boolean)
     }
