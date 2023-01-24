@@ -1,5 +1,5 @@
 import {JSDOM} from "jsdom";
-import { fetchData } from "@/crawler/fetchData.js";
+import {fetchData} from "@/io/fetchData.js";
 
 export async function downloadDom(url)
 {
