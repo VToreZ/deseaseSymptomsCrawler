@@ -11,7 +11,7 @@ function addSymptomsToFile(diseaseName, symptoms)
 }
 
 const ids = ['162200']
-
+g
 export async function parseOmim(url: string) {
   const dom = await downloadDom(url);
   return parseOmimClinicalSynopsis(dom.window.document.body)
