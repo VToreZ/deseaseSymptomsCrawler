@@ -18,6 +18,7 @@
         "transform": "typescript-transform-paths"
       }
     ],
+    "resolveJsonModule": true,
     "skipLibCheck": true
   },
   "include": [
