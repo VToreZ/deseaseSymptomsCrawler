@@ -46,18 +46,28 @@ export async function parse_list_of_omim(codes: string[]) {
       proxyService.next()
     }
   }
+  
+  // for (let prox of proxyList) {
+  //   const url = getOmimUrlByCode('162200')
+  //   const proxy = proxyService.current()
+  //   try
+  //   {
+  //     const errMessage = `proxy: ${proxy.host} url: ${url} \n`
+  //     logger.appendError(errMessage)
+  //     const result = await parseOMIM(url, prox)
+  //     saveObject(`${162200}.json`, result)
+  //     // proxyService.next()
+  //   }
+  //   catch (err) {
+  //     const errMessage = `err: ${err.message}, proxy: ${proxy.host} url: ${url} \n`
+  //     logger.appendError(errMessage)
+  //     // proxyService.next()
+  //   }
+  // }
 }
 
-// parseOMIM('https://omim.org/clinicalSynopsis/162200').then(result => {
-//   saveObject('162200.json', result)
-// }).catch((err) => {
-//   logger.appendError(err)
-// })
-
-const omimUrlList = omimItems.map(omimItem => omimItem.code).filter((code) => code.slice(0, 3) === '162')//.map(code
-// => `https://omim.org/clinicalSynopsis/${code}`)
-
-parse_list_of_omim(omimUrlList.splice(0, 2))
+const omimUrlList = omimItems.map(omimItem => omimItem.code).filter((code) => code.slice(0, 2) === '16')
+parse_list_of_omim(omimUrlList.splice(0, 100))
 
 parse_list_of_OMIM_disorder_codes().then(result => {
   saveObject('list_of_OMIM_disorder_codes.json', result)
