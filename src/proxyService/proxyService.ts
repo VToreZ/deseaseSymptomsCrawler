@@ -20,7 +20,7 @@ export class ProxyService
   next(): void
   {
     const { index, proxies } = this
-    if (index === proxies.length - 1)
+    if (index !== proxies.length - 1)
     {
       this.index++
     } else
@@ -31,6 +31,7 @@ export class ProxyService
   
   current(): HttpProxy
   {
+    console.log(this.proxies[this.index])
     return this.proxies[this.index]
   }
   

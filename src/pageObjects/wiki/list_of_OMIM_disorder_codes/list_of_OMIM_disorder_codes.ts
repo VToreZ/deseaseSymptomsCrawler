@@ -19,7 +19,7 @@ export class List_of_OMIM_disorder_codes {
 
             //  Есть один некорректный случай, фильтруем его
             if(result.length < 3) return null;
-
+            
             return {
                 caption: result[0].trim(),
                 code: result[1].trim(),
