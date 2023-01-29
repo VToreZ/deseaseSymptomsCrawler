@@ -23,15 +23,16 @@ export async function fetchData(url: string, proxy?: HttpProxy): Promise<AxiosRe
 {
   console.log({ proxy })
   
-  const httpsAgent = new https.HttpsProxyAgent(
-    proxy
-    // {host: '176.124.44.64', port: 8000, auth: 'MH7dqQ:FJhhUh'}
-    // {host: '45.70.236.194', port: 999}
-  )
-  
   const getConfigWithProxy = () =>
   {
-    if (proxy.host === undefined) return DEFAULT_CONFIG
+    
+    if (proxy === undefined) return DEFAULT_CONFIG
+  
+    const httpsAgent = new https.HttpsProxyAgent(
+      proxy
+      // {host: '176.124.44.64', port: 8000, auth: 'MH7dqQ:FJhhUh'}
+      // {host: '45.70.236.194', port: 999}
+    )
     
     return {
       ...DEFAULT_CONFIG,

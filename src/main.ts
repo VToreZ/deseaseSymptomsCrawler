@@ -36,14 +36,12 @@ export async function parse_list_of_omim(codes: string[]) {
   const fileNames = fs.readdirSync('output')
   
   for (let code of codes) {
-  console.log(fileNames.find(i => i === '278400'))
     const url = getOmimUrlByCode(code)
     const proxy = proxyService.current
   
     // console.log(fileNames)
     
     const isDataExistForCode = fileNames.some(fileName => fileName === `${code}.json`)
-    if (code === '278400') console.log(isDataExistForCode)
     if (isDataExistForCode) continue;
     
     console.log(proxy.host)
@@ -86,9 +84,9 @@ parse_list_of_omim(omimUrlList.slice(0, 100))
 console.log(omimUrlList.slice(0, 100).find(url => url === '278400'))
 
 
-// parse_list_of_OMIM_disorder_codes().then(result => {
-//   saveObject('list_of_OMIM_disorder_codes.json', result)
-// })
+parse_list_of_OMIM_disorder_codes().then(result => {
+  saveObject('list_of_OMIM_disorder_codes.json', result)
+})
 
 function saveObject(filename, obj: any){
   const result = JSON.stringify(obj, null, 1);
