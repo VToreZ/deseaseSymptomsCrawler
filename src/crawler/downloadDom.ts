@@ -1,4 +1,4 @@
-import { HttpProxy } from "@/proxyService/proxyService.js"
+import { HttpProxy } from "@/proxyService/httpProxy.js"
 import {JSDOM} from "jsdom";
 import {fetchData} from "@/io/fetchData.js";
 

@@ -3,7 +3,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "downlevelIteration": true,
-    //    "target": "es2019",
+    "target": "ES2022",
     "outDir": "./build",
     "rootDir": "./src",
     "lib": ["es2019","ESNext"],
